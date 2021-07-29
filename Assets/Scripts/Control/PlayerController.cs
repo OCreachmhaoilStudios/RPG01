@@ -20,6 +20,7 @@ namespace Control
         {
             _camera = Camera.main;
             _mover = GetComponent<Mover>();
+            _fighter = GetComponent<Fighter>();
         }
 
         // Update is called once per frame
@@ -39,9 +40,9 @@ namespace Control
             foreach (var hit in results)
             {
                 var target = hit.transform;
-                if (!target || !target.CompareTag($"CombatTarget")) continue;
+                if (!target || !target.gameObject.CompareTag($"CombatTarget")) continue;
 
-                if (Input.GetMouseButtonDown(0)) Fighter.Attack(target);
+                if (Input.GetMouseButtonDown(0)) _fighter.Attack(target);
 
                 returnValue = true;
                 break;

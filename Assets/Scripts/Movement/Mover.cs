@@ -33,6 +33,12 @@ namespace Movement
         public void MoveTo(Vector3 destination)
         {
             _navMeshAgent.SetDestination(destination);
+            _navMeshAgent.isStopped = false;
+        }
+
+        public void Stop()
+        {
+            _navMeshAgent.isStopped = true;
         }
     }
 }
