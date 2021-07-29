@@ -1,3 +1,4 @@
+using Combat;
 using Movement;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Control
     public class PlayerController : MonoBehaviour
     {
         private Camera _camera;
+        private Fighter _fighter;
         private Mover _mover;
 
         // Start is called before the first frame update
@@ -23,18 +25,53 @@ namespace Control
         // Update is called once per frame
         private void Update()
         {
-            if (Input.GetMouseButton(0)) MoveToPoint();
+            if (InteractWithCombat()) return;
+            if (InteractWithMovement()) return;
         }
 
-        /**
-         * This method works with the Mover class to move the player to
-         * the location where the player has clicked.
-         */
-        private void MoveToPoint()
+        private bool InteractWithCombat()
+        {
+            var returnValue = false;
+
+            var results = new RaycastHit[5];
+            var dummy = Physics.RaycastNonAlloc(GetMouseRay(), results);
+
+            foreach (var hit in results)
+            {
+                var target = hit.transform;
+                if (!target || !target.CompareTag($"CombatTarget")) continue;
+
+                if (Input.GetMouseButtonDown(0)) Fighter.Attack(target);
+
+                returnValue = true;
+                break;
+            }
+
+            return returnValue;
+        }
+
+        private bool InteractWithMovement()
+        {
+            var returnValue = false;
+
+            var hasHit = Physics.Raycast(GetMouseRay(), out var hit);
+            if (hasHit)
+            {
+                if (Input.GetMouseButton(0))
+                {
+                    returnValue = true;
+                    _mover.MoveTo(hit.point);                    
+                }
+
+            }
+
+            return returnValue;
+        }
+
+        private Ray GetMouseRay()
         {
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
-            var hasHit = Physics.Raycast(ray, out var hit);
-            if (hasHit) _mover.MoveTo(hit.point);
+            return ray;
         }
     }
 }
