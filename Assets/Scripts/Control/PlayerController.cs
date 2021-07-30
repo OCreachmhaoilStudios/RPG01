@@ -60,6 +60,7 @@ namespace Control
             {
                 if (Input.GetMouseButton(0))
                 {
+                    _fighter.Cancel();
                     returnValue = true;
                     _mover.MoveTo(hit.point);                    
                 }
