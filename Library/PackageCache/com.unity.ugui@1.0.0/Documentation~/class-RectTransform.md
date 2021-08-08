@@ -16,20 +16,23 @@ Z)** | Position of the rectangle's pivot point relative to the anchors. The pivo
 |**Width/Height** | Width and height of the rectangle. |
 |**Left, Top, Right,
 Bottom** | Positions of the rectangle's edges relative to their anchors. This can be thought of as padding inside the rectangle defined by the anchors. Shown in place of _
+
 Pos_ and _
-Width/Height_ when the anchors are separated (see below). To access these options click the square Anchor Presets box at the top left of the RectTransform component. |
-|**Anchors** | The anchor points for the lower left corner and the upper right corner of the rectangle. |
-|&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;**
-Min** | The anchor point for the lower left corner of the rectangle defined as a fraction of the size of the parent rectangle. 0,0 corresponds to anchoring to the lower left corner of the parent, while 1,1 corresponds to anchoring to the upper right corner of the parent. |
-|&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;**
-Max** | The anchor point for the upper right corner of the rectangle defined as a fraction of the size of the parent rectangle. 0,0 corresponds to anchoring to the lower left corner of the parent, while 1,1 corresponds to anchoring to the upper right corner of the parent. |
-|**
-Pivot** |Location of the pivot point around which the rectangle rotates, defined as a fraction of the size of the rectangle itself. 0,0 corresponds to the lower left corner while 1,1 corresponds to the upper right corner. |
-|**Rotation** |Angle of rotation (in degrees) of the object around its pivot point along the X, Y and Z axis. |
-|**Scale** |Scale factor applied to the object in the X, Y and Z dimensions. |
-|**Blueprint Mode**|Edit RectTransforms as if they were not rotated and scaled. This enabled snapping too. |
-|**Raw Edit
-Mode**|When enabled, editing pivot and anchor values will not counter adjust the position and size of the rectangle in order to make it stay in one place.
+Width/Height_ when the anchors are separated (see below). To access these options click the square Anchor Presets box at
+the top left of the RectTransform component. | |**Anchors** | The anchor points for the lower left corner and the upper
+right corner of the rectangle. | |&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;**
+Min** | The anchor point for the lower left corner of the rectangle defined as a fraction of the size of the parent
+rectangle. 0,0 corresponds to anchoring to the lower left corner of the parent, while 1,1 corresponds to anchoring to
+the upper right corner of the parent. | |&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;**
+Max** | The anchor point for the upper right corner of the rectangle defined as a fraction of the size of the parent
+rectangle. 0,0 corresponds to anchoring to the lower left corner of the parent, while 1,1 corresponds to anchoring to
+the upper right corner of the parent. | |**
+Pivot** |Location of the pivot point around which the rectangle rotates, defined as a fraction of the size of the
+rectangle itself. 0,0 corresponds to the lower left corner while 1,1 corresponds to the upper right corner. | |**
+Rotation** |Angle of rotation (in degrees) of the object around its pivot point along the X, Y and Z axis. | |**Scale**
+|Scale factor applied to the object in the X, Y and Z dimensions. | |**Blueprint Mode**|Edit RectTransforms as if they
+were not rotated and scaled. This enabled snapping too. | |**Raw Edit Mode**|When enabled, editing pivot and anchor
+values will not counter adjust the position and size of the rectangle in order to make it stay in one place.
 
 ## Details
 

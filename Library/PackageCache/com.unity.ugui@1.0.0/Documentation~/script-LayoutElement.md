@@ -36,8 +36,9 @@ Width** |The relative amount of additional available width this layout element s
 Height** |The relative amount of additional available height this layout element should fill out relative to its siblings. |
 |**Layout
 Priority**|The layout priority for this component. <br/><br/> If a GameObject has more than one component with layout properties (for example, an Image component and a LayoutElement component), the layout system uses the property values from the component with the highest **
-Layout Priority**. <br/><br/> If the components have the same **Layout
-Priority**, the layout system uses the highest value for each property, regardless of which component it comes from.|
+
+Layout Priority**. <br/><br/> If the components have the same **Layout Priority**, the layout system uses the highest
+value for each property, regardless of which component it comes from.|
 
 ## Description
 

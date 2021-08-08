@@ -197,8 +197,9 @@ drag and drop the panel you want to open when the user clicks the button to the 
 ## Notes
 
 This technique only requires each screen to have an AnimatorController with an Open parameter and a Closed state to work
+
 - it doesn't matter how your screen or State Machine are constructed. This technique also works well with nested
-screens, meaning you only need one ScreenManager for each nested level.
+  screens, meaning you only need one ScreenManager for each nested level.
 
 The State Machine we set up above has the default state of Closed, so all of the screens that use this controller start
 as closed. The ScreenManager provides an initiallyOpen property so you can specify which screen is shown first.

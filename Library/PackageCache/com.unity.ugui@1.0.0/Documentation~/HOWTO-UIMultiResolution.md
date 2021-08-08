@@ -11,8 +11,9 @@ layout to various resolutions.
 ![](images/UI_MultiResBase.png)
 
 For this how-to we're going to consider four screen resolutions: Phone HD in portrait (640 x 960) and landscape (960 x
+
 640) and Phone SD in portrait (320 x 480) and landscape (480 x 320). The layout is initially setup in the Phone HD
-Portrait resolution.
+     Portrait resolution.
 
 ## Using anchors to adapt to different aspect ratios
 

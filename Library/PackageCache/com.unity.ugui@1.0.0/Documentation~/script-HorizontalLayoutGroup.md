@@ -30,6 +30,7 @@ Alignment** |The alignment to use for the child layout elements if they don't fi
 |**Control Child Size** |Whether the Layout Group controls the width and height of its child layout elements.|
 |**Use Child
 Scale** |Whether the Layout Group considers the scale of its child layout elements when sizing and laying out elements. <br/><br/> **
+
 Width** and **Height**  correspond to the **Scale > X** and **Scale >
-Y** values in each child layout element's [Rect Transform](class-RectTransform.md) component.|
-|**Child Force Expand** |Whether to force the child layout elements to expand to fill additional available space. |
+Y** values in each child layout element's [Rect Transform](class-RectTransform.md) component.| |**Child Force Expand**
+|Whether to force the child layout elements to expand to fill additional available space. |

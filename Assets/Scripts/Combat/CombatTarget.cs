@@ -1,15 +1,20 @@
+using UnityEditor.XR;
 using UnityEngine;
 
 namespace Combat
 {
+    [RequireComponent(typeof(Health))]
     public class CombatTarget : MonoBehaviour
     {
-        private Collider _collider;
-
         private void Start()
         {
-            _collider = GetComponent<Collider>();
-            _collider.tag = "CombatTarget";
+            gameObject.tag = "CombatTarget";
         }
+
+        public void DeactivateTarget()
+        {
+            gameObject.tag = "Untagged";
+        }
+        
     }
 }

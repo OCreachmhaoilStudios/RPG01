@@ -6,15 +6,16 @@ namespace Combat
 {
     public class Fighter : MonoBehaviour, IAction
     {
+        private static readonly int StopAttack = Animator.StringToHash("stopAttack");
+        private static readonly int Attack1 = Animator.StringToHash("attack");
         [SerializeField] private float weaponRange = 3f;
-
+        [SerializeField] private float weaponDamage = 10f;
         [SerializeField] private float attackDelay = 1f;
-        private float _timeSinceLastAttack;
-        
         private ActionScheduler _actionScheduler;
         private Animator _animator;
         private Mover _mover;
-        private Transform _target;
+        private Health _target;
+        private float _timeSinceLastAttack;
 
         private void Start()
         {
@@ -27,14 +28,14 @@ namespace Combat
         private void Update()
         {
             _timeSinceLastAttack += Time.deltaTime;
-            
+
             // (_target is null) does not check to see if target is destroyed, but is roughly 4x faster than == null
             if (_target is null || !_target.CompareTag("CombatTarget")) return;
-            var isInRange = Vector3.Distance(transform.position, _target.position) < weaponRange;
-            
+            var isInRange = Vector3.Distance(transform.position, _target.transform.position) < weaponRange;
+
             if (!isInRange)
             {
-                _mover.MoveTo(_target.position);
+                _mover.MoveTo(_target.transform.position);
             }
             else
             {
@@ -46,20 +47,20 @@ namespace Combat
         public void Cancel()
         {
             _target = null;
+            _animator.SetTrigger(StopAttack);
         }
 
         private void AttackBehavior()
         {
-            if (_timeSinceLastAttack >= attackDelay)
-            {
-                _animator.SetTrigger("attack");
-            }
+            _animator.ResetTrigger(StopAttack);
+            transform.LookAt(_target.transform);
+            if (_timeSinceLastAttack >= attackDelay) _animator.SetTrigger(Attack1);
         }
 
         public void Attack(Transform target)
         {
             _actionScheduler.StartAction(this);
-            _target = target;
+            _target = target.GetComponent<Health>();
         }
 
         /**
@@ -67,10 +68,13 @@ namespace Combat
          */
         private void Hit()
         {
-            _animator.ResetTrigger("attack");
+            if (_target == null) return;
+            
+            _animator.ResetTrigger(Attack1);
             print("time since last attack: " + _timeSinceLastAttack);
             _timeSinceLastAttack = 0f;
-            print("hit " + _target);
+            _target.TakeDamage(weaponDamage);
+            if (_target.IsDead) Cancel();
         }
     }
 }
