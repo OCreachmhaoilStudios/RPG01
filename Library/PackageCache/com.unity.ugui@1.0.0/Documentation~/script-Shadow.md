@@ -1,6 +1,7 @@
 # Shadow
 
-The Shadow component adds a simple outline effect to graphic components such as Text or Image. It must be on the same GameObject as the graphic component.
+The Shadow component adds a simple outline effect to graphic components such as Text or Image. It must be on the same
+GameObject as the graphic component.
 
 ![Text with no effect.](images/UI_TextExample.png)
 ![Text with Shadow effect.](images/UI_ShadowExample.png)

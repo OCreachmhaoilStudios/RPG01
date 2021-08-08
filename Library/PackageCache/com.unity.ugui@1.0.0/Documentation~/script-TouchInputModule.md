@@ -1,11 +1,13 @@
 # Touch Input Module
 
-**Note: TouchInputModule is obsolete. Touch input is now handled in [StandaloneInputModule](script-StandaloneInputModule).**
+**Note: TouchInputModule is obsolete. Touch input is now handled
+in [StandaloneInputModule](script-StandaloneInputModule).**
 
-This module is designed to work with touch devices. It sends pointer events for touching and dragging in response to user input. The module supports multitouch.
+This module is designed to work with touch devices. It sends pointer events for touching and dragging in response to
+user input. The module supports multitouch.
 
-The module uses the scene configured Raycasters to calculate what element is currently being touched over. A raycast is issued for each current touch.
-
+The module uses the scene configured Raycasters to calculate what element is currently being touched over. A raycast is
+issued for each current touch.
 
 ## Properties
 

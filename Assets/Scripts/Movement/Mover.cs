@@ -1,11 +1,13 @@
+using Core;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Movement
 {
-    public class Mover : MonoBehaviour
+    public class Mover : MonoBehaviour, IAction
     {
         private static readonly int ForwardSpeed = Animator.StringToHash("forwardSpeed");
+        private ActionScheduler _actionScheduler;
         private Animator _animator;
         private NavMeshAgent _navMeshAgent;
 
@@ -14,12 +16,18 @@ namespace Movement
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _animator = GetComponent<Animator>();
+            _actionScheduler = GetComponent<ActionScheduler>();
         }
 
         // Update is called once per frame
         private void Update()
         {
             UpdateAnimator();
+        }
+
+        public void Cancel()
+        {
+            Stop();
         }
 
         private void UpdateAnimator()
@@ -36,7 +44,13 @@ namespace Movement
             _navMeshAgent.isStopped = false;
         }
 
-        public void Stop()
+        public void StartMoveAction(Vector3 destination)
+        {
+            _actionScheduler.StartAction(this);
+            MoveTo(destination);
+        }
+
+        private void Stop()
         {
             _navMeshAgent.isStopped = true;
         }

@@ -32,6 +32,7 @@ namespace Control
 
         private bool InteractWithCombat()
         {
+            print("Interacting with combat");
             var returnValue = false;
 
             var results = new RaycastHit[5];
@@ -40,7 +41,7 @@ namespace Control
             foreach (var hit in results)
             {
                 var target = hit.transform;
-                if (!target || !target.gameObject.CompareTag($"CombatTarget")) continue;
+                if (!target || !target.gameObject.CompareTag("CombatTarget")) continue;
 
                 if (Input.GetMouseButtonDown(0)) _fighter.Attack(target);
 
@@ -56,15 +57,10 @@ namespace Control
             var returnValue = false;
 
             var hasHit = Physics.Raycast(GetMouseRay(), out var hit);
-            if (hasHit)
+            if (hasHit && Input.GetMouseButton(0))
             {
-                if (Input.GetMouseButton(0))
-                {
-                    _fighter.Cancel();
-                    returnValue = true;
-                    _mover.MoveTo(hit.point);                    
-                }
-
+                returnValue = true;
+                _mover.StartMoveAction(hit.point);
             }
 
             return returnValue;

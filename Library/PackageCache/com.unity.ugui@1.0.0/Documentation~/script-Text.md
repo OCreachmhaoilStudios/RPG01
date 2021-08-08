@@ -1,6 +1,7 @@
 # Text
 
-The **Text** control displays a non-interactive piece of text to the user. This can be used to provide captions or labels for other GUI controls or to display instructions or other text.
+The **Text** control displays a non-interactive piece of text to the user. This can be used to provide captions or
+labels for other GUI controls or to display instructions or other text.
 
 ## Properties
 
@@ -18,8 +19,12 @@ The **Text** control displays a non-interactive piece of text to the user. This 
 |**Paragraph**|
 |**Alignment** | The horizontal and vertical alignment of the text. |
 |**Align by Geometry** | Use the extents of glyph geometry to perform horizontal alignment rather than glyph metrics. |
-|**Horizontal Overflow** | The method used to handle the situation where the text is too wide to fit in the rectangle. The options are _Wrap_ and _Overflow_. |
-|**Vertical Overflow** | The method used to handle the situation where wrapped text is too tall to fit in the rectangle. The options are _Truncate_ and _Overflow_. |
+|**Horizontal
+Overflow** | The method used to handle the situation where the text is too wide to fit in the rectangle. The options are _
+Wrap_ and _Overflow_. |
+|**Vertical
+Overflow** | The method used to handle the situation where wrapped text is too tall to fit in the rectangle. The options are _
+Truncate_ and _Overflow_. |
 |**Best Fit** | Should Unity ignore the size properties and simply try to fit the text to the control's rectangle? |
 | | |
 |**Color** | The color used to render the text. |
@@ -31,10 +36,15 @@ A default text element looks like this:
 
 ## Details
 
-Some controls (such as [Buttons](script-Button.md) and [Toggles](script-Toggle.md)) have textual descriptions built-in. For controls that have no implicit text (such as [Sliders](script-Slider.md)), you can indicate the purpose using a label created with a Text control. Text is also useful for lists of instructions, story text, conversations and legal disclaimers.
+Some controls (such as [Buttons](script-Button.md) and [Toggles](script-Toggle.md)) have textual descriptions built-in.
+For controls that have no implicit text (such as [Sliders](script-Slider.md)), you can indicate the purpose using a
+label created with a Text control. Text is also useful for lists of instructions, story text, conversations and legal
+disclaimers.
 
-The Text control offers the usual parameters for font size, style, etc, and text alignment. When the _Rich Text_ option is enabled, markup elements within the text will be treated as styling information, so you can have just a single word or short section in boldface or in a different color, say (see the page about [Rich Text](StyledText.md) for details of the markup scheme).
-
+The Text control offers the usual parameters for font size, style, etc, and text alignment. When the _Rich Text_ option
+is enabled, markup elements within the text will be treated as styling information, so you can have just a single word
+or short section in boldface or in a different color, say (see the page about [Rich Text](StyledText.md) for details of
+the markup scheme).
 
 ## Hints
 

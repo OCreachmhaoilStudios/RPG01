@@ -1,6 +1,7 @@
 # Physics Raycaster
 
-The Raycaster raycasts against 3D objects in the scene. This allows messages to be sent to 3D physics objects that implement event interfaces.
+The Raycaster raycasts against 3D objects in the scene. This allows messages to be sent to 3D physics objects that
+implement event interfaces.
 
 ## Properties
 
