@@ -1777,6 +1777,18 @@ Transform:
   m_Father: {fileID: 2167603096022502885}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &16003357146282635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6882376670920446632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e41c8a2213926c4594eac4b6ea6430b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7065809385138755280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,18 +1997,6 @@ Transform:
   m_Father: {fileID: 5438315517339083851}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &16003357146282635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6882376670920446632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e41c8a2213926c4594eac4b6ea6430b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8401972564824879115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,15 +2137,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 302569573144241678, guid: c5096d1d0b4760f49873d25f13fd0ec3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.41
       objectReference: {fileID: 0}
     - target: {fileID: 302569573144241678, guid: c5096d1d0b4760f49873d25f13fd0ec3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 302569573144241678, guid: c5096d1d0b4760f49873d25f13fd0ec3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.689728
       objectReference: {fileID: 0}
     - target: {fileID: 302569573144241678, guid: c5096d1d0b4760f49873d25f13fd0ec3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2181,6 +2181,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3159930878839242833, guid: c5096d1d0b4760f49873d25f13fd0ec3, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159930878839242833, guid: c5096d1d0b4760f49873d25f13fd0ec3, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
